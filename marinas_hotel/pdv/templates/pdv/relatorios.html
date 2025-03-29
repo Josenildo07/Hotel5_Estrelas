@@ -1,0 +1,30 @@
+{% extends 'pdv/base.html' %}
+
+{% load static %}
+{% block extra_styles %}
+<link rel="stylesheet" type="text/css" href="{% static 'tabelas/tabelas.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<div class="titulo">
+    <h2> Relatórios</h2>
+    <h2> Total de Vendas: R$ {{ total_vendas}} </h2>
+</div>
+
+<table>
+    <tr>
+        <th>Cliente</th>
+        <th>Serviço</th>
+        <th>Preço do Serviço</th>
+    </tr>
+    {% for reserva in reservas %}
+
+    <tr>
+        <td>{{ reserva.cliente.nome}}</td>
+        <td>{{ reserva.servico.nome}}</td>
+        <td>{{ reserva.preco}}</td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}

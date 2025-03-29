@@ -1,0 +1,24 @@
+{% extends 'pdv/base.html' %}
+
+{% load static %}
+{% block extra_sytles %}
+<link rel="stylesheet" type="text/css" href="{% static 'login/styles.css' %}">
+{% endblock%}
+
+{% block content %}
+
+
+<div>
+    <div class="container-register">
+        <h2> Registre-se </h2>
+        <p> Digite os seus dados de acesso no campo abaixo.</p>
+        <form method="post">
+        {% csrf_token %}
+        {{ form.as_p}}
+            
+        <p> Já tem uma conta? <a href="{% url 'login' %}">Faça login aqui</a>.</p>
+        <button type="submit" class="btn"> Registrar</button>
+    </form>
+</div>
+</div>
+{% endblock %}

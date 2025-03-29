@@ -1,0 +1,30 @@
+{% extends 'pdv/base.html' %}
+
+{% load static %}
+{% block extra_styles %}
+<link rel="stylesheet" type="text/css" href="{% static 'formularios/formularios.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<form method="post">
+    <div class="titulo">
+        <h2> Criar Receita</h2>
+        <div class="container3">
+            <div class="component">    
+                <div class="circle">
+                    <span class="wave-1"></span>
+                    <span class="wave-2"></span>
+                    <span class="wave-3"></span>
+                    <span class="wave-4"></span>
+                </div>
+                <a href="{% url 'receitas' %}" class="btn">Voltar</a>
+            </div>
+        </div>
+        <script src="index.js"></script>
+    </div>
+    {% csrf_token %}
+    {{ form.as_p}}
+    <button type="submit" class="salvar-btn">Salvar</button>
+</form>
+{% endblock%}

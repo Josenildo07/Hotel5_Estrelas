@@ -1,0 +1,37 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MARINAS HOTEL</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'global/styles.css' %}">
+    {% block extra_styles %}{% endblock %}
+</head>
+<body>    
+      
+    <header>
+        {% with excluded_routes='/login/,/register/' %}
+            {% if request.path not in excluded_routes %}
+                <nav>
+                    <a href="{% url 'dashboard' %}">Dashboard</a>
+                    <a href="{% url 'clientes' %}">Clientes</a>
+                    <a href="{% url 'quartos' %}">Quartos</a>
+                    <a href="{% url 'servicos' %}">Serviços</a>
+                    <a href="{% url 'reservas' %}">Reservas</a>                    
+                    <a href="{% url 'receitas' %}">Receitas</a>
+                    <a href="{% url 'despesas' %}">Despesas</a>
+                    <a href="{% url 'relatorios' %}">Relatórios</a>
+                    <a href="{% url 'logout' %}">Sair</a>
+                </nav> 
+            {% endif %}
+        {% endwith %}
+    </header>
+    <main>
+        
+        {% block content %}{% endblock %}
+    </main>
+     
+</body>
+</html>

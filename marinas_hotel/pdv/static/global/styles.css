@@ -1,0 +1,226 @@
+/* global/styles.css ou login/login.css */
+
+/* Estilizando o body */
+
+:root {
+
+    --primary-light: #8abdff;
+    --primary: #6d5dfc;
+    --primary-dark: #5b0eeb;
+    --white: #ffffff;
+    --greyLight-1: black;
+    --greyLight-2: #c8d0e7;
+    --greyDark: #9baacf; 
+    --red: red;   
+}
+
+.container3 {
+    min-height: 7vh;
+    border-radius: 0rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--greyLight-1);
+}
+
+
+.component {
+
+    height: 2rem; /*a parte transparente do botão*/
+    width: 12rem; /* o tamanho horizontal do botão*/
+    border-radius: 0rem;
+    box-shadow: 0.8rem 0.8rem 1.4rem var(--greyLight-2), -0.3rem -0.3rem 1.8rem var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+.btn {
+
+    grid-row: 1/2;
+    grid-column: 1/2;
+    width: 07rem; /*a posição do nome criar cliente alinhado dentro do botão*/
+    height: 2rem;
+    border-radius: 0%;
+    font-size: 14px; /*tamanho da fonte dentro do botão*/
+    font-weight: 900; /* Varia entre 100 (fino) e 900 (extra-negrito) */
+    color: var(--primary);
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Centraliza o texto horizontalmente */
+    background: var(--greyLight-1);
+    box-shadow: 0.3rem 0.3rem 0.8rem var(--greyLight-2), -0.2rem -0.2rem 0.5rem var(--white);
+    cursor: pointer;
+    position: relative;
+}
+
+
+.shadow {
+    box-shadow: inset 0.2rem 0.2rem 0.5rem var(--greyLight-2), inset -0.2rem -0.2rem 0.5rem var(--white);
+
+}
+
+.wave-1, .wave-2 {
+    grid-row: 1/2;
+    grid-column: 1/2;
+    width: 10rem;
+    height: 2rem;
+    border-radius: 0%;
+    box-shadow: 0.4rem 0.4rem 0.8rem var(--greyLight-2), -0.4rem -0.4rem 0.8rem var(--white);
+    filter: blur(1px);
+    position: absolute;
+    top: 15%;
+    left: 86%;
+    transform: translate(-5%, -5%);
+    
+
+}
+
+.wave-1 {
+    background: linear-gradient(to bottom right, var(--greyLight-2) 0%, var(--white) 100%);
+    animation: waves 3s linear infinite;
+}
+
+.wave-2 {
+    animation: waves 1s linear 2s infinite;
+}
+
+
+@keyframes waves{
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    
+    50% {
+        opacity: 1;
+    }
+    
+    100% {
+        transform: scale(2);
+        opacity: 0;
+    }
+    }
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif; /* Fonte padrão */
+    background: url('./hotel.jpg');
+    background-size: cover; /* pra ele esticar a tela toda */
+
+}
+
+/* Estilizando o header */
+header {
+    background-color: #5e5be9; /* Cor de fundo da navbar */
+    color: white; /* Cor do texto */
+    padding: 10px 20px; /* Espaçamento interno */
+    position: fixed; /* Fixa a navbar no topo */
+    top: 0; /* Alinha ao topo */
+    left: 0; /* Alinha à esquerda */
+    right: 0; /* Alinha à direita */
+    z-index: 1000; /* Garante que a navbar fique acima de outros elementos */
+}
+
+/* Estilizando a navbar */
+nav {
+    display: flex; /* Usando flexbox para alinhar os itens */
+    justify-content: space-around; /* Espaça os itens uniformemente */
+}
+
+/* Estilizando os links da navbar */
+nav a {
+    color: white; /* Cor do texto dos links */
+    text-decoration: none; /* Remove o sublinhado */
+    padding: 10px 15px; /* Espaçamento interno dos links */
+    transition: background-color 0.3s; /* Transição suave para a cor de fundo */
+}
+
+/* Efeito ao passar o mouse sobre os links */
+nav a:hover {
+    background-color: #3c39fa; /* Cor de fundo ao passar o mouse */
+}
+
+/* Estilizando o main */
+main {
+    margin-top: 60px; /* Espaço acima do conteúdo principal para não ficar atrás da navbar */
+    padding: 20px; /* Espaçamento interno do conteúdo principal */
+}
+
+.titulo {
+    display: flex; /* Usar flexbox para layout */
+    justify-content: space-between; /* Espaço entre os itens */
+    align-items: center; /* Alinha verticalmente os itens ao centro */
+    padding: 10px; /* Espaçamento interno */
+}
+
+.titulo h2 { /* esse titulo h2 é do titulo das paginas clientes, quarto...etc.*/
+    margin: 0; /* Remove a margem padrão do h2 */
+    flex-grow: 1; /* Faz o h2 ocupar o espaço disponível */
+    text-align: left; /* Centraliza o texto */
+    font-size: 50px;
+    color: white;
+}
+
+
+.container-register{
+
+    background: url('./fundo7.jpg');
+
+
+}
+.container-register h2 { /* o nome Registre-se da tela para se registrar*/
+
+
+    font-size: 30px;
+    text-align: center;
+    margin: 100px 0 25px;
+    color: white;
+    
+}
+    
+.container-register p {  /* o nome : digite seus dados... da tela para se registrar*/
+
+    text-decoration:none;
+    color: white;
+    font-weight: 600;  
+    text-align: center;  
+}    
+
+.container-registe a {  /* o nome : "já tem uma conta" da tela para se registrar*/
+
+    text-decoration: none;
+    color: white;
+    font-weight: 300;   
+
+}
+
+.helptext { /* da tela para se registrar. Para tirar aquele excesso de caracteres*/
+
+    display: none;
+}
+
+h2 {
+    color: white;
+    font-size: 50px;
+    text-align: center;
+}
+
+p {
+    color: white;
+    font-size: 30px;
+    text-align: center;
+}
+
+
+#campanhia {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200vh;  /* Define a largura */
+    height: 70vh;            /* Usa toda a altura da tela */
+    margin: 0;
+}

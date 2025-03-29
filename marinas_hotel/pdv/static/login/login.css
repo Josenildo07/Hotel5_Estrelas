@@ -1,0 +1,202 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: url('./fundo7.jpg');
+    background-size: cover; /* pra ele esticar a tela toda */
+    background-position: center;
+
+   /*ackground-color: #5e5be9;*/ 
+    /*height: 100vh;*/
+    /*margin: 0;*/
+}
+
+.container { /*a caixa transparente na tela de login */
+
+
+    width: 400px;
+    background-color: transparent; /* Fundo da caixa de login */
+    border: 2px solid rgba(255, 255, 255, .2); /* pra deixar o cinza um pouco opaco*/
+    border-radius: 10px; /* pra borda ficar arredondada*/
+    color: white; /*pras letras ficarem brancas*/
+    padding: 40px 60px 40px 60px;
+    backdrop-filter: blur(20px); /* pra o fundo transparente ficar um pouco opaco*/
+}
+
+.container2 { /*são os circulos*/
+    position:relative;
+    top: 20%;
+    height: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: top;
+    animation: fadeIn 1s ease-in-out;
+
+  }
+
+.container h1 { /* o nome login na tela de login*/
+
+    font-size: 36px;
+    text-align: center;
+    /*margin-bottom: 10px;*/
+    color: white;
+}
+
+.senha { /* o nome senha na tela de login*/
+    
+    font-size: 36px;
+    text-align: center;
+    /*margin-bottom: 10px;*/
+    color: white;
+    
+
+}
+
+input {
+
+    position: relative; /* pra colocar os ícones dentro do input */
+    width: 100%;
+    background-color: transparent;
+    border: 2px solid rgba(255, 255, 255, .2);
+    border-radius: 40px;
+    outline: none; /* é uma linha azuzinha que fica quado vc clica com o mouse.*/
+    font-size: 16px;
+    color: white;
+    padding: 10px 40px 20px 20px; /* 20 em cima. 45 do lado direito. 20 em baixo e 20 lado esquerdo*/
+    height: 50px; /* aqui separou as duas caixar um pouco uma da outra*/
+    margin: 20px 0; /* significa margim de 30 em cima e em baixo mas dos lados não precisa (0). aqui separou as duas caixas mais ainda.*/
+}
+  
+
+
+input::placeholder { /* aquele nomezinho que fica dentro da caixinha antes de vc clicar. com os : eu mudo somente o placeholder.*/
+
+    color: rgb(140, 137, 137);
+}
+
+.input-box i { /* estilizar o ícone. Os ícones do usuario e cadeado */
+
+    position: absolute; /* para posicionar o ícone em um ponto específico */
+    right: 20px;
+    font-size: 20px; /* para alterar o tamamho do ícone */
+    top: 25%; /* para centralizar ele na caixa*/
+}
+
+
+.forgot-password {
+    display: flex;  /* pra eles poderem serem movidos para qualquer lado*/
+    justify-content: space-between; /* vai jogar cada um para um lado */
+    margin: -15px 0 15px; /* pra ele se afastar 15 de cima, dos lados 0 e embaixo 15*/
+    
+}
+
+/*remember-forgot label input {
+
+    accent-color: #ffff; /* pra o quadradinho não ficar azul quando eu clico dentro dele */
+   /* margin-right: 5px; /* pra o nome "lembrar senha" ficar um pouco separado do quadradinho */
+/*}*/
+
+/*.remember-forgot a { /* aqui é o nome "esqueci a minha senha*/
+
+/*text-decoration: none; /* para tirar o underlaine de debaixo dele*/
+/*color: white;
+}*/
+
+/*.remember-forgot a:hover { /* pra quando eu passar o mouse ele mudar */
+
+/*text-decoration: underline; /* pra quando eu passar o mouse ele fique com o underlaine */
+/*}*/
+
+.login {
+    width: 100%;
+    height: 50px;
+    background-color: white;
+    border-radius: 40px;
+    cursor: pointer ; /* pra ficar a mãozinha quando colocar em cima do botão */
+    font-size: 16px;
+    color: #333;
+    font-weight: 600;
+    box-sizing: 0 0 10px rgba(0, 0, 0, .1);
+    margin-top: 20px;
+}
+
+.login:hover {
+    background-color: transparent;
+    border: 2px solid rgba(255, 255, 255, .2);
+    color: white; /* pra o nome login ficar branco*/
+    transition: 0.5s;}
+
+
+.circle {
+    position: absolute;
+    background: transparent;
+    width: calc(var(--i) * 2.5vmin);
+    aspect-ratio: 1;
+    border-radius: 50%;
+    border: 3px solid rgb(0, 255, 13);
+    transform-style: preserve-3d;
+    transform: rotateX(70deg) translateZ(50px);
+    animation: animate 3s ease-in-out calc(var(--i) * 0.08s) infinite;
+    box-shadow: 0 0 15px rgb(124, 124, 124),
+                inset 0 0 15px rgb(124, 124, 124);
+  }
+
+  @keyframes animate {
+    0%, 100% {
+      transform: rotateX(70deg) translateZ(50px) translateY(0);
+      filter: hue-rotate(0);
+    }
+
+    50% {
+      transform: rotateX(70deg) translateZ(50px) translateY(-50vmin);
+      filter: hue-rotate(360deg);
+    }
+  }
+
+  p { /* ainda não tem uma conta?*/
+
+    color: aquamarine;
+    font-size: 12px;
+  }
+
+  a { /* Registre-se aqui */
+    color: white;
+  }
+
+.btn:hover { /* Esse botão:hover é só para a tela de login. Na tabela.css está o botão das outras pags.*/
+
+    background-color: white;
+    border: 2px solid white(255, 255, 255, .2);
+    color: black; /* pra o nome login ficar branco*/
+    transition: 0.5s;
+    font-size: 30px;
+    
+}
+
+.btn { /* Esse botão é só para a tela de login. Na tabela.css está o botão das outras pags.*/
+    display: block; /* Faz o botão ocupar toda a largura disponível */
+    width: 200px; /* Largura do botão */
+    margin: 20px auto; /* Centraliza o botão */
+    padding: 10px; /* Espaçamento interno do botão */
+    background-color: #11100f; /* Cor de fundo do botão */
+    color: white; /* Cor do texto do botão */
+    text-align: center; /* Centraliza o texto do botão */
+    text-decoration: none; /* Remove o sublinhado */
+    border-radius: 5px; /* Bordas arredondadas */
+    transition: background-color 0.3s; /* Transição suave para a cor de fundo */
+}
+
+
+

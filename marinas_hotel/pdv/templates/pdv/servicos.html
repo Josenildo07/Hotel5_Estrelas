@@ -1,0 +1,34 @@
+{% extends 'pdv/base.html' %}
+
+{% load static %} 
+{% block extra_styles %}
+<link rel="stylesheet" type="text/css" href="{% static 'tabelas/tabelas.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="titulo">
+    <h2>Lista de Serviços</h2>
+    <div class="container3">
+        <div class="component">
+            <div class="circle">
+                <span class="wave-1"></span>
+                <span class="wave-2"></span>
+            </div>
+            <a href="{% url 'criar_servico' %}" class="btn">Criar Serviço</a>
+        </div>
+    </div>
+    <script src="index.js"></script>
+</div>
+<table>
+    <tr>
+        <th>Nome</th>
+        <th>Preço</th>
+    </tr>
+    {% for servico in servicos %}
+    <tr>
+        <td>{{ servico.nome }}</td>
+        <td>R$ {{ servico.preco }}</td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}
